@@ -21,7 +21,7 @@ There are a bunch of different class file parsers available on crates.io. Main d
   (f) read the string.
   With `cafebabe` you just get the string right off the bat, since all the type checking and lookups were done during the parsing phase.
 - *Zero-copy of string data*.
-  All strings are returned as `Cow<'a, str>` which are tied to the lifetime of your input class bytes.
+  All strings are returned as `String` which are tied to the lifetime of your input class bytes.
   This means there's zero copying for strings anywhere in `cafebabe` itself, except in the rare case where a string is in the subset of modified "java utf-8" that isn't regular utf-8.
 - *Minimal dependencies*.
   The crate only has a couple of dependencies, and neither of those pull in any transitive dependencies.
